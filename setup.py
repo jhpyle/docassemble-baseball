@@ -1,6 +1,6 @@
 import os
 import sys
-from setuptools import setup, find_packages
+from setuptools import setup, find_namespace_packages
 from fnmatch import fnmatchcase
 from distutils.util import convert_path
 
@@ -44,16 +44,16 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
     return out
 
 setup(name='docassemble.baseball',
-      version='0.0.1',
+      version='0.0.4',
       description=('A docassemble extension.'),
-      long_description='A docassemble extension about baseball.',
+      long_description='A docassemble extension about baseball.\r\n\r\nThis is a new version, just as a test.\r\n\r\nThis is an even newer version, testing the twine upload process.\r\n\r\nThis is a newer version still, testing the new sdist process.',
       long_description_content_type='text/markdown',
       author='Jonathan Pyle',
       author_email='admin@admin.com',
       license='The MIT License (MIT)',
       url='https://docassemble.org',
-      packages=find_packages(),
-      namespace_packages=['docassemble'],
+      packages=find_namespace_packages(),
+      # namespace_packages=['docassemble'],
       install_requires=[],
       zip_safe=False,
       package_data=find_package_data(where='docassemble/baseball/', package='docassemble.baseball'),
